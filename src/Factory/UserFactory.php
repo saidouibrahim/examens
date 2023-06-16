@@ -47,11 +47,12 @@ final class UserFactory extends ModelFactory
     protected function getDefaults(): array
     {
         return [
-            'email' => self::faker()->realtext(180),
-            'is_verified' => self::faker()->boolean(),
-            'locale' => self::faker()->realtext(10),
-            'password' => self::faker()->realtext(),
-            'roles' => ['USER_ADMIN'],
+            'email' => 'admin@fac.ma',
+            'roles' => ['ROLE_ADMIN'],
+            'password' => 'probook',
+            'username' => 'Admin',
+            'locale' => 'fr',
+            'is_verified' => 1,
         ];
     }
 

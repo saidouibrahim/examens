@@ -15,10 +15,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?int $id;
 
     #[ORM\Column(length: 180, unique: true)]
-    private ?string $email = null;
+    private ?string $email ;
 
     #[ORM\Column]
     private array $roles = [];
@@ -27,16 +27,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @var string The hashed password
      */
     #[ORM\Column]
-    private ?string $password = null;
+    private ?string $password;
 
     #[ORM\Column(length: 50, nullable: true)]
-    private ?string $username = null;
+    private ?string $username;
 
     #[ORM\Column(length: 10)]
-    private ?string $locale = null;
+    private ?string $locale;
 
     #[ORM\Column]
-    private ?bool $is_verified = null;
+    private ?bool $is_verified = false;
 
     public function getId(): ?int
     {

@@ -13,10 +13,10 @@ class Semestre
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?int $id;
 
     #[ORM\Column(length: 30)]
-    private ?string $nom = null;
+    private ?string $nom;
 
     #[ORM\OneToMany(mappedBy: 'semestre', targetEntity: Module::class)]
     private Collection $modules;

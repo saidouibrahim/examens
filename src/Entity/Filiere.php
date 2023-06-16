@@ -13,10 +13,10 @@ class Filiere
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?int $id;
 
     #[ORM\Column(length: 255)]
-    private ?string $nom = null;
+    private ?string $nom;
 
     #[ORM\OneToMany(mappedBy: 'filiere', targetEntity: Module::class)]
     private Collection $modules;

@@ -13,22 +13,22 @@ class Module
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?int $id;
 
     #[ORM\Column(length: 255)]
-    private ?string $nom = null;
+    private ?string $nom;
 
     #[ORM\ManyToOne(inversedBy: 'modules')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Enseignant $enseignant = null;
+    private ?Enseignant $enseignant;
 
     #[ORM\ManyToOne(inversedBy: 'modules')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Filiere $filiere = null;
+    private ?Filiere $filiere;
 
     #[ORM\ManyToOne(inversedBy: 'modules')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Semestre $semestre = null;
+    private ?Semestre $semestre;
 
     #[ORM\OneToMany(mappedBy: 'module', targetEntity: Note::class)]
     private Collection $notes;

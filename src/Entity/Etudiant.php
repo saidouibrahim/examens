@@ -13,19 +13,19 @@ class Etudiant
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?int $id;
 
     #[ORM\Column(length: 50, nullable: true)]
-    private ?string $nom = null;
+    private ?string $nom;
 
     #[ORM\Column(length: 50)]
-    private ?string $prenom = null;
+    private ?string $prenom;
 
     #[ORM\Column(length: 255)]
-    private ?string $adresse = null;
+    private ?string $adresse;
 
     #[ORM\Column(length: 30)]
-    private ?string $cne = null;
+    private ?string $cne;
 
     #[ORM\OneToMany(mappedBy: 'etudiant', targetEntity: Note::class)]
     private Collection $notes;

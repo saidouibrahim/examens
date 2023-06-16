@@ -13,16 +13,16 @@ class Enseignant
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?int $id;
 
     #[ORM\Column(length: 50)]
-    private ?string $nom = null;
+    private ?string $nom;
 
     #[ORM\Column(length: 50)]
-    private ?string $prenom = null;
+    private ?string $prenom;
 
     #[ORM\Column(length: 20)]
-    private ?string $cni = null;
+    private ?string $cni;
 
     #[ORM\OneToMany(mappedBy: 'enseignant', targetEntity: Module::class)]
     private Collection $modules;

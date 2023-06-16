@@ -11,21 +11,21 @@ class Note
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?int $id;
 
     #[ORM\Column]
-    private ?float $note = null;
+    private ?float $note;
 
     #[ORM\Column(length: 255)]
-    private ?string $observation = null;
+    private ?string $observation;
 
     #[ORM\ManyToOne(inversedBy: 'notes')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Etudiant $etudiant = null;
+    private ?Etudiant $etudiant;
 
     #[ORM\ManyToOne(inversedBy: 'notes')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Module $module = null;
+    private ?Module $module;
 
     public function getId(): ?int
     {
