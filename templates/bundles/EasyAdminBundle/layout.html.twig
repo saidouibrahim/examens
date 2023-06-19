@@ -62,8 +62,20 @@
 				{# fin de la modification #}
 
 			</div>
+
+
+			<div
+				class="col-md-5">
+
+				{#   Modification effectuée sur le layout pour insérer le langue switcher #}
+				{% block role_switcher %}
+					{% include 'changeRole.html.twig' %}
+				{% endblock role_switcher %}
+				{# fin de la modification #}
+
+			</div>
 		</div>
-	</div>
+	</div>cd 
 
 	<div class="navbar-custom-menu">
 		{% block header_custom_menu %}
